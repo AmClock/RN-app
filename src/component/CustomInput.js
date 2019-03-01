@@ -13,21 +13,26 @@ export default class CustomInput extends Component {
         this.state = {}
     }
 
+    _test(){
+        console.log(" width ==> "+ width * 0.02);
+    }
+
     render() {
         return (
-            <View style={{width: width * 0.85, height: height / 10, backgroundColor: '#f00' ,
-                position : 'relative'}}>
-                <View style={{position : 'absolute' }}>
-                    <Text style={fz.e}>ID</Text>
+
+            <View style={styles.inputWrap}>
+                <View style={styles.labelWrap}>
+                    <Text style={[fz.e , {color:'#f00' , fontWeight: 'bold' }]}>ID</Text>
                 </View>
                 <View>
                     <TextInput
-                        style={{ height: 40, borderColor: 'gray', borderWidth: 1}}
+                        style={styles.inputSt}
                         onChangeText={(text) => this.setState({text})}
                         value={this.state.text}
                     />
                 </View>
             </View>
+
         );
     }
 }
@@ -35,7 +40,30 @@ export default class CustomInput extends Component {
 
 const styles = StyleSheet . create({
 
+    inputWrap:{
+        width: width * 0.85,
+        height: height / 12,
+        position : 'relative' ,
+        borderRadius: height ,
+        borderWidth : 2 ,
+        borderColor: "#f00" ,
+    },
 
+    labelWrap : {
+        position : 'absolute' ,
+        top: - (height * 0.02 ) ,
+        left: width * 0.02 ,
+        backgroundColor: '#fff',
+    },
+
+    inputBox:{
+        position:"absolute",
+        top: 100,
+    },
+
+    inputSt : {
+        height: height * 0.05 , backgroundColor: '#f0f' ,
+    },
 
 
 });
