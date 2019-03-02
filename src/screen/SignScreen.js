@@ -7,7 +7,9 @@ import CustomInput from "../component/CustomInput";
 
 let {width, height} = Dimensions.get("window");
 
-
+/*
+*  2019. 03. 02
+ */
 export default class SignScreen extends Component {
     constructor(props){
         super(props);
