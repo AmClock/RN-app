@@ -5,16 +5,27 @@ import {fz} from "../style/StyleSheet";
 
 let {width, height} = Dimensions.get("window");
 
-
+/*
+*  2019. 03. 02
+ */
 export default class CustomInput extends Component {
+    static  defaultProps={
+        label : "Not_Label"
+    }
+
+
+
     constructor(props) {
         super(props);
 
-        this.state = {}
+        this.state = {
+
+        }
     }
 
-    _test(){
-        console.log(" width ==> "+ width * 0.02);
+    _test() {
+        console.log("height ==> " + height);
+        console.log("height * 0.9 ==> " + height *0.02);
     }
 
     render() {
@@ -22,11 +33,13 @@ export default class CustomInput extends Component {
 
             <View style={styles.inputWrap}>
                 <View style={styles.labelWrap}>
-                    <Text style={[fz.e , {color:'#f00' , fontWeight: 'bold' }]}>ID</Text>
+                    <Text style={[fz.e, {color: '#f00', fontWeight: 'bold'}]}>
+                       {this.props.label}
+                    </Text>
                 </View>
-                <View>
-                    <TextInput
-                        style={styles.inputSt}
+                <View style={styles.inputBox}>
+                       <TextInput
+                        style={[fz.g,styles.inputSt]}
                         onChangeText={(text) => this.setState({text})}
                         value={this.state.text}
                     />
@@ -38,32 +51,36 @@ export default class CustomInput extends Component {
 }
 
 
-const styles = StyleSheet . create({
+const styles = StyleSheet.create({
 
-    inputWrap:{
+    inputWrap: {
         width: width * 0.85,
         height: height / 12,
-        position : 'relative' ,
-        borderRadius: height ,
-        borderWidth : 2 ,
-        borderColor: "#f00" ,
+        position: 'relative',
+        borderRadius: height,
+        borderWidth: 2,
+        borderColor: "#f00",
     },
 
-    labelWrap : {
-        position : 'absolute' ,
-        top: - (height * 0.02 ) ,
-        left: width * 0.02 ,
+    labelWrap: {
+        position: 'absolute',
+        top: -(height * 0.02),
+        left: width * 0.02,
         backgroundColor: '#fff',
     },
 
-    inputBox:{
-        position:"absolute",
-        top: 100,
+    inputBox: {
+        flex:1,
+        alignItems:'center',
+        justifyContent:'center',
+
     },
 
-    inputSt : {
-        height: height * 0.05 , backgroundColor: '#f0f' ,
+    inputSt: {
+        width: '80%' ,
+        height: '70%' ,
+        backgroundColor: '#0ff',
+        alignItems: 'center',
     },
-
 
 });

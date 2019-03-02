@@ -6,6 +6,9 @@ import CustomBtn from "../component/CustomBtn";
 
 
 let {width, height} = Dimensions.get('window');
+/*
+*  2019. 03. 02
+ */
 export default class TitleScreen extends Component{
 
     render() {

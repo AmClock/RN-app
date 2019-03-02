@@ -1,7 +1,9 @@
 import { Dimensions } from 'react-native'
 import {StyleSheet}from'react-native';
 let {width, height} = Dimensions.get('window');
-
+/*
+*  2019. 03. 02
+ */
 const fz = StyleSheet.create({
     a:{
         fontSize: width/5/1.5,
