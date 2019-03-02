@@ -6,6 +6,9 @@ import CustomBtn from "../component/CustomBtn";
 
 
 let {width, height} = Dimensions.get('window');
+/*
+*  2019. 03. 02
+ */
 export default class TitleScreen extends Component{
 
     render() {
@@ -16,12 +19,18 @@ export default class TitleScreen extends Component{
                         source={require('../image/logo.png')}
                     />
                 </View>
-                <CustomBtn
+                  <CustomBtn
                     title={"Login"}
+                    color={'#f00'}
                     onPress={()=>this.props.navigation.navigate("Login")}
                 />
-                <Button title={"this is button"}
-                onPress={()=>this.props.navigation.navigate("Login")}/>
+
+                <CustomBtn
+                    title={"Sign Up"}
+                    color={'#f0f'}
+                    onPress={()=>this.props.navigation.navigate("Sign")}
+                />
+
             </SafeAreaView>
         );
     }

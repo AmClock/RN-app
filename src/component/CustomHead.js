@@ -4,7 +4,9 @@ import { Dimensions } from 'react-native'
 import {color , fz} from '../style/StyleSheet'
 
 let {width, height} = Dimensions.get('window');
-
+/*
+*  2019. 03. 02
+ */
 export default class CustomHead  extends  Component{
 
     static defaultProps={

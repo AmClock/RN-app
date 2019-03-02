@@ -4,14 +4,15 @@ import {Dimensions} from 'react-native';
 import {fz} from "../style/StyleSheet";
 
 let {width, height} = Dimensions.get('window');
-
+/*
+*  2019. 03. 02
+ */
 export default class CustomBtn extends Component {
 
 
     static defaultProps = {
         title: "notTitle",
-        bg: '#000',
-        fc: '#424242',
+        color: '#000',
         onPress: () => null
     };
 
@@ -23,11 +24,10 @@ export default class CustomBtn extends Component {
 
     render() {
         return (
-            <TouchableOpacity style={[styles.btnWrap, {borderColor: this.props.bg}]}
-                goTo={this.props.goTo}
-                onPress={this.props.onPress}
+            <TouchableOpacity style={[styles.btnWrap, {borderColor: this.props.color}]} onPress={this.props.onPress}
+                              activeOpacity={0.8}
             >
-                <Text style={[fz.d, {color: this.props.fc}]}>
+                <Text style={[fz.d, {color: this.props.color , fontWeight: 'bold'}]}>
                     {this.props.title}
                 </Text>
             </TouchableOpacity>
@@ -38,7 +38,7 @@ export default class CustomBtn extends Component {
 const styles = StyleSheet.create({
     btnWrap: {
         width: width / 2,
-        height: height / 10 / 1.5,
+        height: height / 11 / 1.5,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius:height/30/1.5,
